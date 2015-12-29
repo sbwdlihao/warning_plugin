@@ -15,6 +15,12 @@ namespace Numbull\Warning\Plugin;
  */
 class PluginImp implements PluginInterface
 {
+    protected $_name;
+
+    public function __construct($name = '')
+    {
+        $this->_name = $name;
+    }
 
     /**
      * @return array
@@ -43,11 +49,10 @@ class PluginImp implements PluginInterface
     }
 
     /**
-     * @param string $name
      * @param int $code
      * @param string $message
      */
-    protected function _showResult($name = '', $code = 200, $message = 'success') {
-        exit(json_encode(['name'=>$name, 'code'=>$code, $message=>$message]));
+    protected function _showResult($code = 200, $message = 'success') {
+        exit(json_encode(['name'=>$this->_name, 'code'=>$code, $message=>$message]));
     }
 }
