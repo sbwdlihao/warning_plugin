@@ -53,6 +53,6 @@ class PluginImp implements PluginInterface
      * @param string $message
      */
     protected function _showResult($code = 200, $message = 'success') {
-        exit(json_encode(['name'=>$this->_name, 'code'=>$code, $message=>$message]));
+        exit(json_encode(['name'=>$this->_name, 'code'=>$code, 'message'=>$message]));
     }
 }
