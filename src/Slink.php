@@ -139,6 +139,6 @@ class Slink
             $data=$query;
         }
 
-        return ['success'=>false, 'data'=>$data];
+        return ['success'=>true, 'data'=>$data];
     }
 }
