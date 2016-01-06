@@ -20,24 +20,44 @@ namespace Numbull\Warning\Plugin;
 class PluginImp implements PluginInterface
 {
     /**
-     * @var string
-     */
-    protected $_name;
-
-    /**
      * @var int
      */
     protected $_id;
 
     /**
      * PluginImp constructor.
-     * @param string $name
      * @param int $id
      */
-    public function __construct($name = '', $id = 0)
+    public function __construct($id = 0)
     {
-        $this->_name = $name;
         $this->_id = $id;
+    }
+
+    /**
+     * task type
+     * @return string
+     */
+    public function getType()
+    {
+        return '';
+    }
+
+    /**
+     * task name
+     * @return string
+     */
+    public function getName()
+    {
+        return '';
+    }
+
+    /**
+     * task description
+     * @return string
+     */
+    public function getDescription()
+    {
+        return '';
     }
 
     /**
@@ -71,6 +91,6 @@ class PluginImp implements PluginInterface
      * @param string $message
      */
     protected function _showResult($code = 200, $message = 'success') {
-        exit(json_encode(['name'=>$this->_name, 'id'=>$this->_id, 'code'=>$code, 'message'=>$message]));
+        exit(json_encode(['name'=>$this->getName(), 'id'=>$this->_id, 'code'=>$code, 'message'=>$message]));
     }
 }

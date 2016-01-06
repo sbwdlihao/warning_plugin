@@ -14,6 +14,23 @@ namespace Numbull\Warning\Plugin;
  */
 interface PluginInterface {
     /**
+     * task type
+     * @return string
+     */
+    public function getType();
+
+    /**
+     * task name
+     * @return string
+     */
+    public function getName();
+
+    /**
+     * task description
+     * @return string
+     */
+    public function getDescription();
+    /**
      * @return array
      */
     public function showConfig();
