@@ -30,6 +30,7 @@ interface PluginInterface {
      * @return string
      */
     public function getDescription();
+
     /**
      * @return array
      */
